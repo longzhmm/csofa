@@ -1,9 +1,9 @@
 # csofa built into an vcpkg CMake port.
 
-# ============================================
+# =====================================
 # portfile.cmake 
 # csofa的cmake的编译信息
-# ============================================
+# =====================================
 # portfile.cmake
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
@@ -35,9 +35,9 @@ file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/${
 
 
 
-# ============================================ 
+# =====================================
 # vcpkg.json文件，包含名称、版本、以及所需依赖vcpkg库
-# ============================================ 
+# =====================================
 # vcpkg.json
 {
 	"name": "csofa",
@@ -48,11 +48,11 @@ file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/${
 
 
 
-# ============================================ 
+# =====================================
 # vcpkg-configuration.json文件
 # 全部安装完成后集合到vs中会用到registries文件，
 # 文件内为vcpkg库的下载源
-# ============================================ 
+# =====================================
 # vcpkg-configuration.json
 {
     "registries": [
