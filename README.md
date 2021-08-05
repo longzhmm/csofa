@@ -1,4 +1,5 @@
 # csofa
+<<<<<<< HEAD
 
 csofa built into an vcpkg CMake port.
 
@@ -13,3 +14,5 @@ csofa built into an vcpkg CMake port.
     ]
 }
 ```
+=======
+>>>>>>> 5e730cb303eb43abdce8db7fc15c46a3a98c43f9
