@@ -1,8 +1,8 @@
 cmake_minimum_required (VERSION 3.8)
 
-# ╡Иур╣╠г╟д©б╪об╣дкЫспт╢нд╪Ч
+# Ф÷╔Ф┴╬Е╫⌠Е┴█Г⌡╝Е╫∙Д╦▀Г └Ф┴─Ф°┴Ф╨░Ф√┤Д╩╤
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} source)
-# иЗЁиа╢╫с©Б
+# Г■÷Ф┬░И⌠╬Ф▌╔Е╨⌠
 add_library(csofa ${source})
 
 add_library(csofa::csofa ALIAS csofa) 
