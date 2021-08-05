@@ -1,6 +1,5 @@
 #ifndef SOFAHDEF
 #define SOFAHDEF
-
 /*
 **  - - - - - - -
 **   s o f a . h

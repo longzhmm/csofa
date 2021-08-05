@@ -1,9 +1,15 @@
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.15)
 
 # 查找当前目录下的所有源文件
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} source)
 # 生成链接库
 add_library(csofa ${source})
+
+#GENERATE_EXPORT_HEADER(csofa
+#                       BASE_NAME csofa
+#                       EXPORT_MACRO_NAME csofa_EXPORTS
+#                       EXPORT_FILE_NAME csofa_exports.h
+#                       STATIC_DEFINE SHARED_EXPORTS_BUILT_AS_STATIC)
 
 add_library(csofa::csofa ALIAS csofa) 
 

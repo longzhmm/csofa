@@ -18,6 +18,12 @@ option(BUILD_csofa_TESTS "Build Tests" ON)
 
 include(GNUInstallDirs)
 
+# include(GenerateExportHeader)
+if(MSVC)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+    set(BUILD_SHARED_LIBS TRUE)
+endif()
+
 add_subdirectory(src)
 
 add_subdirectory(include)
