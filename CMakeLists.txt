@@ -32,3 +32,4 @@ if(BUILD_csofa_TESTS)
 	enable_testing()    
 	add_subdirectory(test)
 endif()
+
