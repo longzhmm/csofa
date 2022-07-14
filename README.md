@@ -1,68 +1,12 @@
-# csofa built into an vcpkg CMake port.
+# csofa is the C++ version of the SOFA software
+SOFA (Standards Of Fundamental Astronomy) software package is a subroutine library of astronomical basic standards written by IAU. At present, there are a total of 161 subroutines, which are mainly written in Fortran F77 and ANSI C. Each subroutine is placed in a .f file. Its main content includes two aspects: basic vector operations and astronomical basic standards.
 
-# =====================================
-# portfile.cmake 
-# csofa的cmake的编译信息
-# =====================================
-# portfile.cmake
-vcpkg_from_github(
-    OUT_SOURCE_PATH SOURCE_PATH
-    REPO longzhmm/csofa
-    REF 9092d7deed92bc736a8493dc2927d3949ece7577
-    SHA512 2ed3966eb2e8e4413300f3c09ac1a2124e708313b0f1360f64e57fe5de6f7b67c78702c91606161cfae24ca2516dac0665c0f85251328b89e70fafa3f2d70a31
-    HEAD_REF main
-)
+Since Fortran 77 does not support basic operations on matrices and vectors, such as matrix multiplication, etc. So SOFA has some subroutines for this. On this basis, the subroutines of the astronomical basic standard are written, including: Julian day calculation of UTC time; based on the 1976 precession and 1980 nutation standards from the earth-fixed coordinate system (ITRF) to the J2000 geocentric celestial coordinate system (GCRF) Transformation matrices (which also contain the latest IAU 2000 and 2006 standards); and calculations of solar system planetary ephemeris, etc.
 
-vcpkg_configure_cmake(
-    SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA
-    OPTIONS 
-        -DBUILD_csofa_TESTS=OFF   
-)
+All these subroutines are compiled according to the relevant standards of the IAU, there are detailed notes in the program, and there are relevant instructions in the documentation, which is very easy to read.
 
-vcpkg_install_cmake() 
- 
-vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake/csofa)
+SOFA description and download address: https://iausofa.org/
 
-vcpkg_copy_pdbs()
+All these subprograms are compiled according to the relevant standards of the IAU. There are detailed comments in the program, and there are also relevant instructions in the documentation under the doc folder. It is very easy to read.
 
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
-
-file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
-
-file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
-# --------------------------------------------
-
-
-
-# =====================================
-# vcpkg.json文件，包含名称、版本、以及所需依赖vcpkg库
-# =====================================
-# vcpkg.json
-{
-	"name": "csofa",
-	"version-string":"1.0",
-	"description":"csofa are from SOFA Software"
-}
-# --------------------------------------------
-
-
-
-# =====================================
-# vcpkg-configuration.json文件
-# 全部安装完成后集合到vs中会用到registries文件，
-# 文件内为vcpkg库的下载源
-# =====================================
-# vcpkg-configuration.json
-{
-    "registries": [
-        {
-            "kind": "git",
-            "repository": "https://github.com/longzhmm/csofa.git",
-            "packages": [ "csofa" ]
-        }
-    ]
-}
-
-# --------------------------------------------
-
+"manual.pdf" contains the function descriptions and interface descriptions of all subroutines in the SOFA software package; "sofa_pn.pdf" contains the descriptions of the IAU 2000 and IAU 2006 precession nutation models, as well as the detailed conversion process from ITRS to GCRS.
